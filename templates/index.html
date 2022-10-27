@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Quicksand", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .bd-grid {
+        max-width: 1024px;
+        display: flex;
+        margin: 1rem;
+        justify-content: center;
+      }
+
+      .safe {
+        background-color: green;
+      }
+
+      .alert {
+        background-color: yellow;
+      }
+
+      .danger {
+        background-color: red;
+      }
+
+      .normal {
+        background-color: lightskyblue;
+      }
+
+      .card-container {
+        width: 300px;
+        height: 430px;
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0px 1px 10px 1px rgba(14, 36, 49, 0.15);
+        overflow: hidden;
+        display: inline-block;
+        margin: 1rem;
+      }
+
+      .upper-container {
+        height: 150px;
+      }
+
+      .image-container {
+        background: white;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        padding: 5px;
+        transform: translate(100px, 100px);
+        align-items: center;
+      }
+
+      .image-container img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+      }
+
+      .lower-container {
+        height: 280px;
+        background: #fff;
+        padding: 20px;
+        padding-top: 40px;
+        text-align: center;
+      }
+
+      .lower-container h3,
+      h4 {
+        box-sizing: border-box;
+        line-height: 0.6;
+        font-weight: lighter;
+      }
+
+      .lower-container h4 {
+        color: lightskyblue;
+        opacity: 0.6;
+        font-weight: bold;
+      }
+
+      .lower-container p {
+        font-size: 16px;
+        color: gray;
+        margin-bottom: 40px;
+      }
+
+      .lower-container .btn {
+        padding: 12px 20px;
+        background: lightseagreen;
+        border: none;
+        color: white;
+        border-radius: 30px;
+        font-size: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease-in;
+      }
+
+      .lower-container .btn:hover {
+        background: transparent;
+        color: lightskyblue;
+        border: 2px solid lightskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bd-grid">
+      <div class="card-container">
+        <div class="upper-container {{ .windClass }}">
+          <div class="image-container">
+            <img src="https://illustoon.com/photo/dl/7215.png" />
+          </div>
+        </div>
+        <div class="lower-container">
+          <div>
+            <h3>Wind</h3>
+          </div>
+          <div>
+            <p>
+                Kecepatan angin mencapai
+                <b> {{ .windValue }} m/s </b>
+            </p>
+          </div>
+          <div>
+            <a href="#" class="btn">{{ .windStatus }}</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="upper-container {{ .waterClass }}">
+          <div class="image-container">
+            <img src="https://illustoon.com/photo/dl/4507.png">
+          </div>
+        </div>
+        <div class="lower-container">
+          <div>
+            <h3>Water</h3>
+          </div>
+          <div>
+            <p>
+              Ketinggian air mencapai
+              <b> {{ .waterValue }} m </b>
+            </p>
+          </div>
+          <div>
+            <a href="#" class="btn">{{ .waterStatus }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+        window.setTimeout(function(){ document.location.reload(true); }, 15000);
+      </script>
+  </body>
+</html>
