@@ -25,10 +25,13 @@
       }
 
       .bd-grid {
-        max-width: 1024px;
         display: flex;
         margin: 1rem;
         justify-content: center;
+      }
+
+      .col-2 {
+        width: 30%;
       }
 
       .safe {
@@ -126,6 +129,15 @@
   </head>
   <body>
     <div class="bd-grid">
+      <div class="col-2">
+        <p class="deskripsi">Pembelajaran Golang</p>
+        <h2>Assignment-3 : Auto Reload Data Project</h2>
+        <p>
+          microservice untuk meng-update sebuah file json setiap 15 detik dengan angka random 
+          antara 1-100 untuk value water dan wind.
+        </p>
+        <button onClick="window.location.reload();">Refresh Page</button>
+      </div>
       <div class="card-container">
         <div class="upper-container {{ .windClass }}">
           <div class="image-container">
